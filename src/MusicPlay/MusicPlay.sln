@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{15D47709-A75B-41C9-ADFF-6B66FE2C2CAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1ED6601D-1C6D-493E-BD8B-C213FEEFE455}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlay.WebApplication", "Application\MusicPlay.WebApplication\MusicPlay.WebApplication.csproj", "{A03F7333-7BD9-4641-913E-244AEF2B4B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlay.Database", "Database\MusicPlay.Database\MusicPlay.Database.csproj", "{9C951EB2-7BE8-4A18-8928-722361BB0015}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A03F7333-7BD9-4641-913E-244AEF2B4B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03F7333-7BD9-4641-913E-244AEF2B4B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03F7333-7BD9-4641-913E-244AEF2B4B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03F7333-7BD9-4641-913E-244AEF2B4B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A03F7333-7BD9-4641-913E-244AEF2B4B1F} = {15D47709-A75B-41C9-ADFF-6B66FE2C2CAE}
+		{9C951EB2-7BE8-4A18-8928-722361BB0015} = {1ED6601D-1C6D-493E-BD8B-C213FEEFE455}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF269C0C-C523-48C0-A676-979CE84726B6}
+	EndGlobalSection
+EndGlobal
