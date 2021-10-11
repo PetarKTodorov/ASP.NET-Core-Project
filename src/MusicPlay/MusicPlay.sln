@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{1ED6601D-1C6D-493E-BD8B-C213FEEFE455}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlay.WebApplication", "Application\MusicPlay.WebApplication\MusicPlay.WebApplication.csproj", "{A03F7333-7BD9-4641-913E-244AEF2B4B1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlay.WebApplication", "Application\MusicPlay.WebApplication\MusicPlay.WebApplication.csproj", "{A03F7333-7BD9-4641-913E-244AEF2B4B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicPlay.Database", "Database\MusicPlay.Database\MusicPlay.Database.csproj", "{9C951EB2-7BE8-4A18-8928-722361BB0015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MusicPlay.Database", "Database\MusicPlay.Database\MusicPlay.Database.csproj", "{9C951EB2-7BE8-4A18-8928-722361BB0015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisicPlay.Models", "Database\MisicPlay.Models\MisicPlay.Models.csproj", "{8E48C0D3-BB90-4801-AF7B-FE2062466E28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C951EB2-7BE8-4A18-8928-722361BB0015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E48C0D3-BB90-4801-AF7B-FE2062466E28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E48C0D3-BB90-4801-AF7B-FE2062466E28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E48C0D3-BB90-4801-AF7B-FE2062466E28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E48C0D3-BB90-4801-AF7B-FE2062466E28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A03F7333-7BD9-4641-913E-244AEF2B4B1F} = {15D47709-A75B-41C9-ADFF-6B66FE2C2CAE}
 		{9C951EB2-7BE8-4A18-8928-722361BB0015} = {1ED6601D-1C6D-493E-BD8B-C213FEEFE455}
+		{8E48C0D3-BB90-4801-AF7B-FE2062466E28} = {1ED6601D-1C6D-493E-BD8B-C213FEEFE455}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF269C0C-C523-48C0-A676-979CE84726B6}
