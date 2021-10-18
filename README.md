@@ -18,11 +18,18 @@ Albums
 - GUID ID
 - string Name
 - DateTime RelaseDate
-- IEnumerable<Author> Albums
+- IEnumerable<Author> Authors
 - IEnumerable<Song> Songs
 - DateTime CreatedOn
 - DateTime? DeletedOn
 - DateTime? UpdatedOn
+- IEnumerable<UserAlbumsMapping> FavourireAlbums
+
+AlbumsAuthorsMapping
+- GUID ID
+
+- GUID AlbumId
+- GUID AuthorId 
 
 Awards
 - GUID ID
@@ -41,8 +48,22 @@ Songs
 - GUID AlbumId
 - DateTime RelaseDate
 - string Name
+- IEnumerable<UserSongsMapping> FavourireSongs
+
+UserSongsMapping
+- GUID ID
+
+- GUID UserId
+- GUID SongId 
+
+UserAlbumsMapping
+- GUID ID
+
+- GUID UserId
+- GUID AlbumId 
+
 
 Users
-- IEnumerable<Songs> FavourireSongs
-- IEnumerable<Albums> FavourireAlbums
+- IEnumerable<UserSongsMapping> FavourireSongs
+- IEnumerable<UserAlbumsMapping> FavourireAlbums
 
