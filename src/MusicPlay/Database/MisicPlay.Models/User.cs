@@ -9,13 +9,13 @@ namespace MisicPlay.Models
     {
         public User()
         {
-            this.FavourireAlbums = new HashSet<UserAlbumsMapping>();
-            this.FavourireSongs = new HashSet<UserSongsMapping>();
+            this.UserSongsMapping = new HashSet<UserSongsMapping>();
+            this.UserAlbumsMapping = new HashSet<UserAlbumsMapping>();
         }
 
-        public IEnumerable<UserSongsMapping> FavourireSongs { get; set; }
+        public IEnumerable<UserSongsMapping> UserSongsMapping { get; set; }
 
-        public IEnumerable<UserAlbumsMapping> FavourireAlbums { get; set; }
+        public IEnumerable<UserAlbumsMapping> UserAlbumsMapping { get; set; }
 
     }
 }

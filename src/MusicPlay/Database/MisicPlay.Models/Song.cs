@@ -9,7 +9,7 @@
     {
         public Song()
         {
-            this.UsersFavourirteSogs = new HashSet<UserSongsMapping>();
+            this.UserSongsMapping = new HashSet<UserSongsMapping>();
         }
 
         public string Name { get; set; }
@@ -27,6 +27,6 @@
 
         public DateTime? UpdatedOn { get; set; }
 
-        public virtual IEnumerable<UserSongsMapping> UsersFavourirteSogs { get; set; }
+        public virtual IEnumerable<UserSongsMapping> UserSongsMapping { get; set; }
     }
 }

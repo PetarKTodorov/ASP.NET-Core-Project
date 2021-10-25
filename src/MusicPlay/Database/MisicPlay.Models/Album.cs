@@ -9,9 +9,9 @@
     {
         public Album()
         {
-            this.Authors = new HashSet<AlbumsAuthorsMapping>();
+            this.AlbumsAuthorsMapping = new HashSet<AlbumsAuthorsMapping>();
             this.Songs = new HashSet<Song>();
-            this.FavourireUsersAlbums = new HashSet<UserAlbumsMapping>();
+            this.UserAlbumsMapping = new HashSet<UserAlbumsMapping>();
         }
 
         public string Name { get; set; }
@@ -26,11 +26,11 @@
 
         public DateTime? UpdatedOn { get; set; }
 
-        public virtual IEnumerable<AlbumsAuthorsMapping> Authors { get; set; }
+        public virtual IEnumerable<AlbumsAuthorsMapping> AlbumsAuthorsMapping { get; set; }
 
         public virtual IEnumerable<Song> Songs { get; set; }
 
-        public virtual IEnumerable<UserAlbumsMapping> FavourireUsersAlbums { get; set; }
+        public virtual IEnumerable<UserAlbumsMapping> UserAlbumsMapping { get; set; }
 
     }
 }

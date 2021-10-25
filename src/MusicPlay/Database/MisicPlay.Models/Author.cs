@@ -9,7 +9,7 @@
     {
         public Author()
         {
-            this.Albums = new HashSet<AlbumsAuthorsMapping>();
+            this.AlbumsAuthorsMapping = new HashSet<AlbumsAuthorsMapping>();
             this.Awards = new HashSet<Award>();
         }
 
@@ -27,7 +27,7 @@
 
         public DateTime? UpdatedOn { get; set; }
 
-        public virtual IEnumerable<AlbumsAuthorsMapping> Albums { get; set; }
+        public virtual IEnumerable<AlbumsAuthorsMapping> AlbumsAuthorsMapping { get; set; }
 
         public virtual IEnumerable<Award> Awards { get; set; }
     }
