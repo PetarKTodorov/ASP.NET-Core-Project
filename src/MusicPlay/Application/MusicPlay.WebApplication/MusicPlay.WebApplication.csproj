@@ -20,7 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Database\MisicPlay.Models\MisicPlay.Models.csproj" />
     <ProjectReference Include="..\..\Database\MusicPlay.Database\MusicPlay.Database.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
 </Project>

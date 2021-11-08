@@ -1,12 +1,14 @@
 ﻿namespace MusicPlay.Database
 {
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
     using MisicPlay.Models;
 
-    public class MusicPlayDbContext : DbContext
+    public class MusicPlayDbContext : IdentityDbContext<User>
     {
-        public MusicPlayDbContext(DbContextOptions options)
+
+        public MusicPlayDbContext(DbContextOptions<MusicPlayDbContext> options)
             : base(options)
         {
 

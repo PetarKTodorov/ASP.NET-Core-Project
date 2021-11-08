@@ -16,7 +16,7 @@
 
         public DateTime RelaseDate { get; set; }
 
-        public Guid AlbumId { get; set; }
+        public Guid? AlbumId { get; set; }
         public virtual Album Album { get; set; }
 
         public DateTime? DeletedOn { get; set; }
