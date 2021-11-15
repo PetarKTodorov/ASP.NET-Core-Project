@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\MusicPlay.Constants\MusicPlay.Constants.csproj" />
     <ProjectReference Include="..\..\Database\MisicPlay.Models\MisicPlay.Models.csproj" />
     <ProjectReference Include="..\..\Database\MusicPlay.Database\MusicPlay.Database.csproj" />
   </ItemGroup>

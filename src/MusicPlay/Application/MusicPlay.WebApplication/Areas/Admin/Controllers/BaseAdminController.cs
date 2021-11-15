@@ -3,10 +3,11 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
+    using MusicPlay.Constants.Database;
     using MusicPlay.Database;
 
     [Area("Admin")]
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class BaseAdminController : Controller
     {
         public BaseAdminController(MusicPlayDbContext dbContext)
