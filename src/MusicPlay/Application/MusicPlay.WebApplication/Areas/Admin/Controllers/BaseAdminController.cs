@@ -3,6 +3,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
+    using MusicPlay.Constants.Application;
     using MusicPlay.Constants.Database;
     using MusicPlay.Database;
 

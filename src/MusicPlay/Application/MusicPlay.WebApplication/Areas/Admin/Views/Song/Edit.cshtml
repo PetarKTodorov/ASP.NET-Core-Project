@@ -1,16 +1,17 @@
-﻿@model Song;
+﻿
+@model Song;
 
-<form asp-area="Admin" asp-controller="Song" asp-action="Create" method="POST">
+<form asp-area="Admin" asp-controller="Song" asp-action="Edit" method="POST">
 
     <div class="form-group">
         <label asp-for="@Model.Name"></label>
-        <input class="form-control" asp-for="@Model.Name" />
+        <input class="form-control" asp-for="@Model.Name" value="@Model.Name" />
         <span asp-validation-for="Name"></span>
     </div>
 
     <div class="form-group">
         <label asp-for="@Model.RelaseDate"></label>
-        <input class="form-control" asp-for="@Model.RelaseDate" type="date" />
+        <input class="form-control" asp-for="@Model.RelaseDate" type="date" value="@Model.RelaseDate.ToString("yyyy-MM-dd")" />
         <span asp-validation-for="RelaseDate"></span>
     </div>
 

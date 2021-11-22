@@ -2,6 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+
+    using Microsoft.AspNetCore.Mvc;
 
     using MisicPlay.Models.Interfaces;
 
@@ -12,6 +15,8 @@
             this.UserSongsMapping = new HashSet<UserSongsMapping>();
         }
 
+        [Required]
+        [MinLength(3)]
         public string Name { get; set; }
 
         public DateTime RelaseDate { get; set; }
