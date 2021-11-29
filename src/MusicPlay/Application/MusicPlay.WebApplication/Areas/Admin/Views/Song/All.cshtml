@@ -1,20 +1,29 @@
 ﻿@model IEnumerable<Song>
 
+
 <div class="row">
     @foreach (var song in Model)
     {
         if (song.IsDeleted == false)
         {
-            <div class="col-6 border border-dark">
-                <div> Is Deleted: @song.IsDeleted</div>
-                <div>@song.Id</div>
-                <div>@song.Name</div>
-                <div>@song.RelaseDate</div>
-                <div>
-                    <a asp-area="Admin" asp-controller="Song" asp-action="Edit" asp-route-id="@song.Id">Edit </a>
-                    <a asp-area="Admin" asp-controller="Song" asp-action="Delete" asp-route-id="@song.Id">Delete </a>
-                </div>
-            </div>
+    <div class="col-6 border border-dark">
+        <div> Is Deleted: @song.IsDeleted</div>
+        <div>@song.Id</div>
+        <div>@song.Name</div>
+        <div>@song.RelaseDate</div>
+        @if (song.Album?.Name != null)
+        {
+            <div> Album Name: @song.Album.Name</div>
+        }
+        else
+        {
+            <div> Album Name: not set</div>
+        }
+        <div>
+            <a asp-area="Admin" asp-controller="Song" asp-action="Edit" asp-route-id="@song.Id">Edit </a>
+            <a asp-area="Admin" asp-controller="Song" asp-action="Delete" asp-route-id="@song.Id">Delete </a>
+        </div>
+    </div>
         }
 
     }

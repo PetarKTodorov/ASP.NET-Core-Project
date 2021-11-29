@@ -22,9 +22,19 @@
                             Songs
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-area="Admin" asp-controller="Song" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-area="@ApplicationConstants.AdminArea" asp-controller="Song" asp-action="Create">Create</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" asp-area="Admin" asp-controller="Song" asp-action="All">List All</a>
+                            <a class="dropdown-item" asp-area="@ApplicationConstants.AdminArea" asp-controller="Song" asp-action="All">List All</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Albums
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" asp-area="@ApplicationConstants.AdminArea" asp-controller="Album" asp-action="Create">Create</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-area="@ApplicationConstants.AdminArea" asp-controller="Album" asp-action="All">List All</a>
                         </div>
                     </li>
                 </ul>

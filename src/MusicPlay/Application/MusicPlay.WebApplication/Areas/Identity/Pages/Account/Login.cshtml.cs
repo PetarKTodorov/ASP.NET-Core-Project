@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using MisicPlay.Models;
+using MusicPlay.Constants.Application;
 
 namespace MusicPlay.WebApplication.Areas.Identity.Pages.Account
 {
@@ -86,7 +87,8 @@ namespace MusicPlay.WebApplication.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    return RedirectToAction("All", "Song", new { area = ApplicationConstants.AdminArea });
+                    //return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 using MisicPlay.Models;
 
@@ -23,6 +25,17 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            var allAlbums = this.DbContext.Albums
+                .Select(a => new SelectListItem
+                {
+                    Value = a.Id.ToString(),
+                    Text = a.Name,
+                })
+                .ToArray();
+
+
+            this.ViewBag.Albums = allAlbums;
+
             return this.View();
         }
 
@@ -118,7 +131,9 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult All()
         {
-            var allSongs = this.DbContext.Songs.ToArray();
+            var allSongs = this.DbContext.Songs
+                .Include(s => s.Album)
+                .ToArray();
 
 
             return this.View(allSongs);

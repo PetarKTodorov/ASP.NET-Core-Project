@@ -9,6 +9,7 @@ using MisicPlay.Models;
 
 using MusicPlay.WebApplication.Models;
 using MusicPlay.Constants.Database;
+using MusicPlay.Constants.Application;
 
 namespace MusicPlay.WebApplication.Controllers
 {
@@ -31,6 +32,12 @@ namespace MusicPlay.WebApplication.Controllers
             await this.SeedRoles();
             await this.SeedUsres();
             await this.SeedUsersRolesMappingTable();
+
+
+            if (this.User != null && this.User.IsInRole(ApplicationConstants.AdminRole))
+            {
+                return RedirectToAction("All", "Song", new { area = ApplicationConstants.AdminArea });
+            }
 
             return View();
         }
