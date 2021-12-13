@@ -17,9 +17,9 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
     public class SongController : BaseAdminController
     {
         public SongController(MusicPlayDbContext dbContext)
-            :base(dbContext)
+            : base(dbContext)
         {
-            
+
         }
 
         [HttpGet]
@@ -66,6 +66,11 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
                 return RedirectToAction(nameof(this.Create), this.GetType().Name.Replace("Controller", ""), new { area = ApplicationConstants.AdminArea });
             }
 
+            var allAlbums = this.DbContext.Albums
+                .ToArray();
+
+            this.ViewBag.Albums = allAlbums;
+
             return this.View(song);
         }
 
@@ -91,7 +96,7 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
         {
             var song = this.DbContext.Songs.SingleOrDefault(s => s.Id == id);
 
-            if (song.IsDeleted == true)
+            if (song.IsDeleted)
             {
                 return RedirectToAction(nameof(this.All), this.GetType().Name.Replace("Controller", ""), new { area = ApplicationConstants.AdminArea });
             }
@@ -100,6 +105,11 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
             {
                 return RedirectToAction(nameof(this.Create), this.GetType().Name.Replace("Controller", ""), new { area = ApplicationConstants.AdminArea });
             }
+
+            var allAlbums = this.DbContext.Albums
+                .ToArray();
+
+            this.ViewBag.Albums = allAlbums;
 
             return this.View(song);
         }
@@ -112,7 +122,7 @@ namespace MusicPlay.WebApplication.Areas.Admin.Controllers
                 return this.View(song);
             }
 
-            if (song.IsDeleted == true)
+            if (song.IsDeleted)
             {
                 return RedirectToAction(nameof(this.All), this.GetType().Name.Replace("Controller", ""), new { area = ApplicationConstants.AdminArea });
             }

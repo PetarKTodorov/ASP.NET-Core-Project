@@ -1,4 +1,8 @@
-﻿@model Album;
+﻿@model CrateAlbumBM;
+
+@{ 
+    var listAuthors = this.ViewBag.AllAuthors as SelectListItem[];
+}     
 
 <form asp-area="Admin" asp-controller="Album" asp-action="Create" method="POST">
 
@@ -12,6 +16,11 @@
         <label asp-for="@Model.RelaseDate"></label>
         <input class="form-control" asp-for="@Model.RelaseDate" type="date" />
         <span asp-validation-for="RelaseDate"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="authors">Authors</label>
+        @Html.ListBoxFor(m => m.authors, listAuthors, new { @class = "form-control" })
     </div>
 
     <button type="submit" class="btn btn-primary">Create</button>

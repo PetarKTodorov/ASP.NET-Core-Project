@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Author>
+
+
+<div class="row">
+    @foreach (var auther in Model)
+    {
+        if (auther.IsDeleted == false)
+        {
+            <div class="col-5 border border-dark m-3">
+                <div> Is Deleted: @auther.IsDeleted</div>
+                <div>@auther.Id</div>
+                <div>@auther.Names</div>
+                <div>@auther.Birthday</div>
+                <div>
+                    Albums:
+                    <div class="d-flex flex-wrap">
+                        @foreach (var album in auther.AlbumsAuthorsMapping)
+	                    {
+		                    <div class="m-1">@album.Album.Name</div>
+	                    }
+                    </div>
+                </div>
+                <div>
+                    <a asp-area="Admin" asp-controller="Author" asp-action="Edit" asp-route-id="@auther.Id">Edit </a>
+                    <a asp-area="Admin" asp-controller="Author" asp-action="Delete" asp-route-id="@auther.Id">Delete </a>
+                </div>
+            </div>
+        }
+
+    }
+</div>

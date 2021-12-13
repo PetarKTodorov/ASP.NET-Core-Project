@@ -1,7 +1,7 @@
 ﻿
-@model Song;
+@model Album;
 
-<form asp-area="Admin" asp-controller="Song" asp-action="Delete" method="POST">
+<form asp-area="Admin" asp-controller="Album" asp-action="Delete" method="POST">
 
     <div class="form-group">
         <label asp-for="@Model.Name"></label>
@@ -13,20 +13,6 @@
         <label asp-for="@Model.RelaseDate"></label>
         <input class="form-control" readonly asp-for="@Model.RelaseDate" type="date" value="@Model.RelaseDate.ToString("yyyy-MM-dd")" />
         <span asp-validation-for="RelaseDate"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="@Model.AlbumId"></label>
-        <select asp-for="@Model.AlbumId" class="form-control" disabled>
-            @foreach (var album in this.ViewBag.Albums)
-            {
-                bool isSelected = album.Id == Model.AlbumId;
-                string isSelectedHtml = isSelected == true ? "selected" : null;
-
-                <option value="@album.Id" selected="@isSelectedHtml">@album.Name</option>
-            }
-        </select>
-        <span asp-validation-for="AlbumId"></span>
     </div>
 
     <button type="submit" class="btn btn-danger">Delete</button>

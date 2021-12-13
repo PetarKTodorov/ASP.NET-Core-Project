@@ -1,1 +1,41 @@
-﻿ALL
+﻿@model IEnumerable<Album>
+
+<div class="row">
+    @foreach (var album in Model)
+    {
+        if (album.IsDeleted == false)
+        {
+    <div class="col-5 border border-dark m-3">
+        <div>Is Deleted: @album.IsDeleted</div>
+        <div>@album.Id</div>
+        <div>@album.Name</div>
+        <div>@album.RelaseDate</div>
+        <div>
+            <div>Songs: </div>
+            <div class="d-flex flex-wrap">
+                @foreach (var song in album.Songs)
+                {
+                    <div class="m-2">@song.Name</div>
+                }
+            </div>
+
+        </div>
+        <div>
+            <div>Authers: </div>
+            <div class="d-flex flex-wrap">
+                @foreach (var albumsAuthorsMapping in album.AlbumsAuthorsMapping)
+                {
+                    <div class="m-2">@albumsAuthorsMapping.Author.Names</div>
+                }
+            </div>
+
+        </div>
+        <div>
+            <a asp-area="Admin" asp-controller="Album" asp-action="Edit" asp-route-id="@album.Id">Edit </a>
+            <a asp-area="Admin" asp-controller="Album" asp-action="Delete" asp-route-id="@album.Id">Delete </a>
+        </div>
+    </div>
+        }
+
+    }
+</div>

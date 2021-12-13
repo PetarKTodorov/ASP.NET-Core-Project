@@ -15,6 +15,25 @@
         <span asp-validation-for="RelaseDate"></span>
     </div>
 
+    <div class="form-group">
+        <label asp-for="@Model.AlbumId"></label>
+        <select asp-for="@Model.AlbumId" class="form-control">
+            @foreach (var album in this.ViewBag.Albums)
+            {
+                if (album.IsDeleted)
+                {
+                    continue;
+                }
+
+                bool isSelected = album.Id == Model.AlbumId;
+                string isSelectedHtml = isSelected == true ? "selected" : null;
+
+                <option value="@album.Id" selected="@isSelectedHtml">@album.Name</option>
+             }
+        </select>
+        <span asp-validation-for="AlbumId"></span>
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
