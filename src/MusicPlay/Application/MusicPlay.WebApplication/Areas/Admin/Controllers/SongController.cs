@@ -9,49 +9,43 @@ using Microsoft.EntityFrameworkCore;
 
 using MisicPlay.Models;
 
+using MusicPlay.BindingModels;
 using MusicPlay.Constants.Application;
 using MusicPlay.Database;
+using MusicPlay.Services.Album;
+using MusicPlay.Services.Song;
 
 namespace MusicPlay.WebApplication.Areas.Admin.Controllers
 {
     public class SongController : BaseAdminController
     {
-        public SongController(MusicPlayDbContext dbContext)
+        private readonly IAlbumService albumService;
+        private readonly ISongService songService;
+
+        public SongController(MusicPlayDbContext dbContext, IAlbumService albumService, ISongService songService)
             : base(dbContext)
         {
-
+            this.albumService = albumService;
+            this.songService = songService;
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            var allAlbums = this.DbContext.Albums
-                .Select(a => new SelectListItem
-                {
-                    Value = a.Id.ToString(),
-                    Text = a.Name,
-                })
-                .ToArray();
-
-
-            this.ViewBag.Albums = allAlbums;
+            this.ViewBag.Albums = this.albumService.GetAllAsSelectListItem();
 
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(Song song)
+        public IActionResult Create(CreateSongBM createSongBM)
         {
             if (this.ModelState.IsValid == false)
             {
-                return this.View(song);
+                return this.View(createSongBM);
             }
 
-            song.CreatedOn = DateTime.UtcNow;
-
-            this.DbContext.Songs.Add(song);
-
-            this.DbContext.SaveChanges();
+            songService.Create(createSongBM);
 
             return RedirectToAction(nameof(this.All), this.GetType().Name.Replace("Controller", ""), new { area = ApplicationConstants.AdminArea });
         }

@@ -14,6 +14,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using MisicPlay.Models;
+using MusicPlay.Services.Album;
+using MusicPlay.Services.Song;
 
 using MusicPlay.Database;
 
@@ -58,6 +60,8 @@ namespace MusicPlay.WebApplication
             });
 
             services.AddControllersWithViews();
+
+            this.RegisterServices(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -94,6 +98,12 @@ namespace MusicPlay.WebApplication
 
                 endpoints.MapRazorPages();
             });
+        }
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddTransient<IAlbumService, AlbumService>();
+            services.AddTransient<ISongService, SongService>();
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿@model Song;
+﻿@model CreateSongBM;
+
+@{ 
+    var albums = this.ViewBag.Albums;
+}
 
 <form asp-area="Admin" asp-controller="Song" asp-action="Create" method="POST">
 

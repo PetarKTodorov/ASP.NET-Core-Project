@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-
-using MisicPlay.Models;
-
-using MusicPlay.BindingModels;
-using MusicPlay.Constants.Application;
-using MusicPlay.Database;
-
-namespace MusicPlay.WebApplication.Areas.Admin.Controllers
+﻿namespace MusicPlay.WebApplication.Areas.Admin.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.EntityFrameworkCore;
+
+    using MisicPlay.Models;
+
+    using MusicPlay.BindingModels;
+    using MusicPlay.Constants.Application;
+    using MusicPlay.Database;
+    using MusicPlay.Services.Album;
+
     public class AlbumController : BaseAdminController
     {
         public AlbumController(MusicPlayDbContext dbContext) 
             : base(dbContext)
         {
+
         }
 
         [HttpGet]

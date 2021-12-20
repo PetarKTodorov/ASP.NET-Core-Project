@@ -24,6 +24,7 @@
     <ProjectReference Include="..\..\Database\MisicPlay.Models\MisicPlay.Models.csproj" />
     <ProjectReference Include="..\..\Database\MusicPlay.Database\MusicPlay.Database.csproj" />
     <ProjectReference Include="..\..\DTOs\BindingModels\MusicPlay.BindingModels.csproj" />
+    <ProjectReference Include="..\..\Services\MusicPlay.Services\MusicPlay.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
